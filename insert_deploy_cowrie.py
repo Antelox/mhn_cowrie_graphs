@@ -8,10 +8,10 @@ except sqlite3.OperationalError as e:
     print e
     sys.exit(1)
 cur = conn.cursor()
-f = open('deploy_kippo_MySQL_support.sh', 'r')
+f = open('deploy_cowrie_MySQL.sh', 'r')
 date = datetime.now()
-notes = 'Initial deploy script for Ubuntu - Kippo with MySQL support'
-name = 'Ubuntu - Kippo with MySQL support'
+notes = 'Initial deploy script for Ubuntu - cowrie with MySQL support'
+name = 'Ubuntu - cowrie with MySQL support'
 sql = "SELECT COUNT(*) FROM deploy_scripts where name = '%s'" % name
 cur.execute(sql)
 conn.commit()
@@ -24,4 +24,4 @@ if inserted == 0:
 conn.close()
 f.close()
 
-__author__ = 'mercolino'
+__author__ = 'Antelox'

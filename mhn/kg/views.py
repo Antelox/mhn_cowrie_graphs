@@ -4,9 +4,9 @@ from mhn.auth import login_required
 
 kg = Blueprint('kg', __name__, url_prefix='/kg')
 
-@kg.route('/kippo_graph/', methods=['GET'])
+@kg.route('/cowrie_graph/', methods=['GET'])
 @login_required
-def kippo_graph():
+def cowrie_graph():
         graphs = {'top_10_passwords':'Top 10 Passwords Attempted',
                   'top_10_usernames':'Top 10 Usernames Attempted',
                   'top_10_combinations':'Top 10 Username-Password Combinations',
@@ -26,17 +26,17 @@ def kippo_graph():
                   'human_activity_busiest_days': 'Human Activity busiest days (Top 20)',
                   'human_activity_per_day': 'Human Activity per day',
                   'human_activity_per_week': 'Human Activity per Week', }
-        sensors = Sensor.query.filter_by(honeypot='kippo-mysql').all()
+        sensors = Sensor.query.filter_by(honeypot='cowrie-mysql').all()
         data = {}
         for sr in sensors:
                 subdata = []
                 for name, title in graphs.iteritems():
                         image_set = {}
-                        image_set['url'] = name + '_kippo_' + sr.uuid.replace('-', '_') + '.png'
-                        image_set['thumb'] = name + '_kippo_' + sr.uuid.replace('-', '_') + '_th' + '.png'
+                        image_set['url'] = name + '_cowrie_' + sr.uuid.replace('-', '_') + '.png'
+                        image_set['thumb'] = name + '_cowrie_' + sr.uuid.replace('-', '_') + '_th' + '.png'
                         image_set['title'] = title
                         subdata.append(image_set)
                 data[sr.name] = subdata
         return render_template('kg/stats.html', data=data)
 
-__author__ = 'mercolino'
+__author__ = 'Antelox'

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Kippo Sensor Statistics{% endblock %}
+{% block title %}Cowrie Sensor Statistics{% endblock %}
 {% block content %}
 <div class="row" style="margin-top:30px;">
     <div class="large-9 large-centered columns" style="text-align:center;">
        <h2>
-            Kippo Sensor Statistic Graphs
+            Cowrie Sensor Statistic Graphs
        </h2>
     </div>
 </div>
@@ -37,10 +37,10 @@
                 {% for img in image %}
                     <div class="large-4 columns" style="text-align:center;">
                         <a class = 'th' data-reveal-id="{{ 'Modal-'~rowloop.index~'-'~loop.index }}" href="#">
-                            <img src="{{'/static/img/kippo_graphs/' + img.thumb}}">
+                            <img src="{{'/static/img/cowrie_graphs/' + img.thumb}}">
                         </a>
                         <div id="{{ 'Modal-'~rowloop.index~'-'~loop.index }}" class="reveal-modal medium text-center" data-reveal aria-hidden="true" role="dialog">
-                            <img src="{{'/static/img/kippo_graphs/' + img.url}}">
+                            <img src="{{'/static/img/cowrie_graphs/' + img.url}}">
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                         </div>
                     </div>
