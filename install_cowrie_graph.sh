@@ -56,10 +56,10 @@ if [ -f $MHN_HOME/server/mhn/templates/base.html~ ];
 then
     echo "Base.html File exists, replacing it"
     sudo mv $MHN_HOME/server/mhn/templates/base.html~ $MHN_HOME/server/mhn/templates/base.html
-    sed -r "s#(<!-- Right Nav Section -->)#<!-- Right Nav Section --> \ \n                <li><a href=\"{{ url_for('kg.cowrie_graph') }}\">Cowrie-Graph</a></li>#" $MHN_HOME/server/mhn/templates/base.html
+    sed -i -r "s#(<!-- Right Nav Section -->)#<!-- Right Nav Section --> \ \n                <li><a href=\"{{ url_for('kg.cowrie_graph') }}\">Cowrie-Graph</a></li>#" $MHN_HOME/server/mhn/templates/base.html
     chown www-data:www-data $MHN_HOME/server/mhn/templates/base.html
 else
-    sed -r "s#(<!-- Right Nav Section -->)#<!-- Right Nav Section --> \ \n                <li><a href=\"{{ url_for('kg.cowrie_graph') }}\">Cowrie-Graph</a></li>#" $MHN_HOME/server/mhn/templates/base.html
+    sed -i -r "s#(<!-- Right Nav Section -->)#<!-- Right Nav Section --> \ \n                <li><a href=\"{{ url_for('kg.cowrie_graph') }}\">Cowrie-Graph</a></li>#" $MHN_HOME/server/mhn/templates/base.html
 fi
 
 # Registering Blueprint with Flask app
