@@ -1,3 +1,5 @@
+***DON'T USE IT, I MUST COMPLETE COWRIE ADAPTATIONS YET***
+
 # MHN cowrie Graphs
 
 This is a set of scripts written in python and bash shell that add the capability to the ThreatStream Modern Honey Network (MHN)
